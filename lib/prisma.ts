@@ -1,7 +1,10 @@
 import { PrismaClient } from '@prisma/client'
 
 const prismaClientSingleton = () => {
-  return new PrismaClient()
+  // In Prisma 7, we explicitly pass the URL here if it's missing from the schema
+  return new PrismaClient({
+    datasourceUrl: process.env.DATABASE_URL
+  })
 }
 
 declare global {
