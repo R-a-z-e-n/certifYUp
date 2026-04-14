@@ -16,8 +16,8 @@ export default async function handler(
             firstName: firstName || 'New',
             lastNameInitial: lastNameInitial || 'U.',
             role: role || 'student',
-            // In a real app, we would hash the password here.
-            // For this demo, we're just storing the user.
+            tokenBalance: 250,
+            rating: 4.8
           },
         });
         return response.status(201).json({ message: 'User created', user });

@@ -15,7 +15,6 @@ export default async function handler(
       where: { userId: String(userId) }
     });
 
-    // Grouping by status for charts
     const chartData = [
       { name: 'Submitted', value: applications.filter(a => a.status === 'submitted').length },
       { name: 'Reviewed', value: applications.filter(a => a.status === 'reviewed').length },
