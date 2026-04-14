@@ -1,5 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { prisma } from './prisma.js';
+import { PrismaClient } from '@prisma/client';
+
+// Self-contained Prisma initialization to avoid Vercel "Module Not Found" errors
+const prisma = new PrismaClient();
 
 export default async function handler(
   request: VercelRequest,
