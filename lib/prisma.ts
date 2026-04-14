@@ -1,8 +1,6 @@
 import { PrismaClient } from '@prisma/client'
 
 const prismaClientSingleton = () => {
-  // Prisma 7 handles the URL automatically via prisma.config.ts
-  // so we can use a clean constructor here.
   return new PrismaClient()
 }
 
