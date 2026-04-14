@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "1776154359461",
+      "email": "bobby@gmail.com",
+      "firstName": "Razeen",
+      "lastNameInitial": "U.",
+      "role": "student",
+      "tokenBalance": 250,
+      "rating": 4.8
+    },
+    {
+      "id": "1776155287515",
+      "email": "razeeniqbal@gmail.com",
+      "firstName": "Razeen",
+      "lastNameInitial": "U.",
+      "role": "student",
+      "tokenBalance": 250,
+      "rating": 4.8
+    }
+  ]
+}

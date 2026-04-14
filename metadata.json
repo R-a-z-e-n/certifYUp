@@ -1,0 +1,8 @@
+{
+  "name": "Certiyup - Verified Internship Platform",
+  "description": "Certiyup connects students, graduates, and recruiters on a trusted internship platform with verified opportunities and faster matching.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

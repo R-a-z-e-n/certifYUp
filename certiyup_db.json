@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": "u_1776156240732",
+      "email": "razeeniqbal555@gmail.com",
+      "firstName": "razeen",
+      "lastNameInitial": "U.",
+      "role": "student",
+      "tokenBalance": 250,
+      "rating": 4.8,
+      "createdAt": "2026-04-14T08:44:00.732Z"
+    }
+  ]
+}

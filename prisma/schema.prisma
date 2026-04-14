@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native"]
+  engineType    = "library"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String   @id @default(cuid())
+  email           String   @unique
+  firstName       String
+  lastNameInitial String
+  role            String   // 'student' | 'recruiter' | 'supervisor'
+  rating          Float    @default(0)
+  region          String?
+  tokenBalance    Int      @default(0)
+  bio             String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  applications    Application[]
+  assignments     Assignment[]
+}
+
+model Internship {
+  id              String   @id @default(cuid())
+  title           String
+  company         String
+  category        String
+  location        String
+  stipend         String
+  description     String
+  postedDate      DateTime @default(now())
+  verified        Boolean  @default(false)
+
+  applications    Application[]
+}
+
+model Application {
+  id            String   @id @default(cuid())
+  status        String   @default("pending")
+  appliedDate   DateTime @default(now())
+  
+  userId        String
+  user          User     @relation(fields: [userId], references: [id])
+  
+  internshipId  String
+  internship    Internship @relation(fields: [internshipId], references: [id])
+}
+
+model Assignment {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  dueDate     DateTime
+  status      String   @default("pending")
+  
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+}
